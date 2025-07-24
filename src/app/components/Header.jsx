@@ -5,7 +5,7 @@ export default function Header({ siteLogo }) {
   return (
     <header className="flex items-center justify-between">
       <Image src={siteLogo} alt="site logo" />
-      <NavLinks />
+      <NavLinks className="hidden md:flex " />
       <button>
         <svg
           xmlns="http://www.w3.org/2000/svg"

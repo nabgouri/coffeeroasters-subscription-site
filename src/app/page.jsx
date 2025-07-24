@@ -1,6 +1,8 @@
 import Button from "./components/Button";
+import Collections from "./components/Collections";
+import Credentials from "./components/Credentials";
 import Hero from "./components/Hero";
-import homeImage from "@/app/assets/images/homeImage-mobile.png";
+import homeImage from "@/app/assets/images/home/homeImage-mobile.png";
 export default function Home() {
   return (
     <article>
@@ -11,6 +13,8 @@ export default function Home() {
       >
         <Button>Create your plan</Button>
       </Hero>
+      <Collections />
+      <Credentials />
     </article>
   );
 }
