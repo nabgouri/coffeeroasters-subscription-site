@@ -9,3 +9,12 @@
   --font-fraunces: var(--font-fraunces);
   --font-barlow: var(--font-barlow);
 }
+.hero {
+  background-image: var(--bg-mobile);
+}
+
+@media (min-width: 1220px) {
+  .hero {
+    background-image: var(--bg-desktop);
+  }
+}

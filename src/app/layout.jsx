@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
       >
         <Header siteLogo={siteLogo} />
         {children}
-        <Footer siteLogo={siteLogo} />
+        <Footer />
       </body>
     </html>
   );

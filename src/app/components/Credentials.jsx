@@ -25,8 +25,8 @@ export default function Credentials() {
     },
   ];
   return (
-    <section className="mx-6 px-6 pt-16 bg-[#2C343E] text-center">
-      <h2 className="text-background text-[1.75rem] font-black leading-7 font-fraunces  ">
+    <section className="mx-6 px-6 pt-16 bg-[#2C343E] text-center max-h-[60rem] ">
+      <h2 className="text-background text-[1.75rem] font-black leading-7 font-fraunces">
         Why choose us?
       </h2>
       <p className="text-background mt-6 mb-16">
@@ -34,9 +34,9 @@ export default function Credentials() {
         featured in our range. This means working closely with the best coffee
         growers to give you a more impactful experience on every level.
       </p>
-      <ul className="flex flex-col gap-6 ">
+      <ul className="flex flex-col gap-6  ">
         {credentialsInfo.map((credential) => (
-          <CredentialCard credential={credential} />
+          <CredentialCard key={credential.title} credential={credential} />
         ))}
       </ul>
     </section>
