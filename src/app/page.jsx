@@ -35,7 +35,11 @@ export default function Home() {
       </Hero>
       <Collections />
       <Credentials />
-      <ItemsList title="How it works" items={instructions} />
+      <ItemsList
+        title="How it works"
+        items={instructions}
+        ulClassName="gap-14"
+      />
     </article>
   );
 }

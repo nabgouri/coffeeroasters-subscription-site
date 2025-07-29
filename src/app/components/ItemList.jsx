@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function ItemList({ item, index }) {
   const { title, description, image } = item;
   return (
-    <li className="text-center">
+    <li className="text-center flex flex-col items-center">
       {image ? (
         <Image src={image} alt="" />
       ) : (
@@ -11,12 +11,10 @@ export default function ItemList({ item, index }) {
           0{index + 1}
         </div>
       )}
-      <h3 className="font-fraunces text-darkCryanBlue font-black text-[1.75rem] leading-8  my-6">
+      <h3 className="font-fraunces  font-black text-[1.75rem] leading-8  my-6">
         {title}
       </h3>
-      <p className="text-base leading-6 font-barlow text-darkCryanBlue">
-        {description}
-      </p>
+      <p className="text-base leading-6 font-barlow ">{description}</p>
     </li>
   );
 }
