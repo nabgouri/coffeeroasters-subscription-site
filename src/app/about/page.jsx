@@ -1,5 +1,5 @@
 import Hero from "../components/Hero";
-import aboutImage from "@/app/assets/images/about/hero-images/aboutImage-mobile.png";
+import aboutImage from "@/app/assets/images/about/hero-images/image-hero-whitecup-mobile.jpg";
 import aboutImageDesktop from "@/app/assets/images/about/hero-images/aboutImage-desktop.png";
 import CommitmentSection from "../components/CommitmentSection";
 import QualitySection from "../components/Quality";

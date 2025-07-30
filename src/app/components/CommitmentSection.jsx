@@ -1,8 +1,8 @@
 import Image from "next/image";
-import commitmentImage from "@/app/assets/images/about/commitment-image.png";
+import commitmentImage from "@/app/assets/images/about/image-commitment.jpg";
 export default function CommitmentSection() {
   return (
-    <section className="my-[7.5rem] ">
+    <section className="mt-[7.5rem] mb-[12.375rem] ">
       <Image src={commitmentImage} />
       <h2 className="font-fraunces text-[2rem] leading-12 mt-12 text-center font-black text-darkCryanBlue">
         Our commitment

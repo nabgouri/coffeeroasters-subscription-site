@@ -2,7 +2,7 @@ import Button from "./components/Button";
 import Collections from "./components/Collections";
 import Credentials from "./components/Credentials";
 import Hero from "./components/Hero";
-import homeImage from "@/app/assets/images/home/hero-images/homeImage-tablet.png";
+import homeImage from "@/app/assets/images/home/hero-images/image-hero-coffeepress-mobile.jpg";
 import homeImageDesktop from "@/app/assets/images/home/hero-images/homeImage-desktop.png";
 import ItemsList from "@/app/components/ItemsList";
 export default function Home() {
@@ -30,6 +30,7 @@ export default function Home() {
         description="Start your mornings with the world’s best coffees. Try our expertly curated artisan coffees from our best roasters delivered directly to your door, at your schedule."
         background={homeImage}
         backgroundDesktop={homeImageDesktop}
+        className="bg-right-top"
       >
         <Button>Create your plan</Button>
       </Hero>

@@ -1,10 +1,10 @@
 import Image from "next/image";
-
+import imageQuality from "@/app/assets/images/about/image-quality.jpg";
 export default function QualitySection() {
   return (
-    <section className=" bg-darkCryanBlue rounded-[10px] text-center px-6 pb-[3.75rem] ">
-      <Image />
-      <h2 className="text-[1.75rem] font-fraunces leading-7 font-black text-background mb-6">
+    <section className=" bg-darkCryanBlue rounded-[10px] text-center px-6 pb-[3.75rem] flex flex-col">
+      <Image src={imageQuality} className="-mt-[4.875rem] rounded-lg" />
+      <h2 className="text-[1.75rem] font-fraunces mt-16 leading-7 font-black text-background mb-6">
         Uncompromising quality
       </h2>
       <p className="leading-6 text-background font-barlow">
