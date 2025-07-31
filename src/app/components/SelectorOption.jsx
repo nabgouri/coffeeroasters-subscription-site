@@ -32,8 +32,7 @@ export default function SelectorOption({ title, options, request }) {
           {options.map((option, index) => (
             <Option
               onClick={() => {
-                setOrderOptions({ ...orderOptions, orderOptions[request]: option.title });
-                console.log(orderOptions);
+                setOrderOptions({ ...orderOptions, [request]: option.title });
               }}
               key={index}
               option={option}

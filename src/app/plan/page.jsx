@@ -140,8 +140,13 @@ export default function SubscribePage() {
       />
       <ItemsList isPrimaryTheme={false} items={orderFlow} />
       <div className="flex flex-col gap-24">
-        {CoffeeCombination.map(({ title, options }, index) => (
-          <SelectorOption key={index} title={title} options={options} />
+        {CoffeeCombination.map(({ title, options, request }, index) => (
+          <SelectorOption
+            key={index}
+            title={title}
+            options={options}
+            request={request}
+          />
         ))}
       </div>
       <OrderSummary />
