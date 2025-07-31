@@ -1,8 +1,12 @@
 import Hero from "../components/Hero";
 import subscribeImage from "@/app/assets/images/subscribe/image-hero-blackcup-mobile.jpg";
 import subscribeDesktop from "@/app/assets/images/subscribe/image-hero-blackcup-mobile.jpg";
+import subscribeTablet from "@/app/assets/images/subscribe/image-hero-blackcup-tablet.jpg";
+
 import ItemsList from "../components/ItemsList";
 import SelectorOption from "../components/SelectorOption";
+import OrderSummary from "../components/OrderSummary";
+import Button from "../components/Button";
 const orderFlow = [
   {
     title: "Pick your coffee",
@@ -40,6 +44,7 @@ const CoffeeCombination = [
           "Dense and finely ground beans for an intense, flavorful experience",
       },
     ],
+    request: "coffeFlavor",
   },
   {
     title: "What type of coffee?",
@@ -60,6 +65,7 @@ const CoffeeCombination = [
           "Combination of two or three dark roasted beans of organic coffees",
       },
     ],
+    request: "coffeType",
   },
   {
     title: "How much would you like?",
@@ -80,6 +86,7 @@ const CoffeeCombination = [
           "Perfect for offices and events. Yields about 90 delightful cups.",
       },
     ],
+    request: "coffeeAmount",
   },
   {
     title: "Want us to grind them?",
@@ -99,6 +106,7 @@ const CoffeeCombination = [
           "Course ground beans specially suited for french press coffee",
       },
     ],
+    request: "coffeeGrind",
   },
   {
     title: "How often should we deliver?",
@@ -116,22 +124,28 @@ const CoffeeCombination = [
         description: "$12.00 per shipment. Includes free priority shipping.",
       },
     ],
+    request: "coffeeTime",
   },
 ];
 export default function SubscribePage() {
   return (
-    <article>
+    <article className="flex flex-col items-center">
       <Hero
         background={subscribeImage}
+        backgroundTablet={subscribeTablet}
         backgroundDesktop={subscribeDesktop}
         title="Create your plan"
         description="Build a subscription plan that best fits your needs. We offer an assortment of the best 
   artisan coffees from around the globe delivered fresh to your door."
       />
       <ItemsList isPrimaryTheme={false} items={orderFlow} />
-      {CoffeeCombination.map(({ title, options }) => (
-        <SelectorOption title={title} options={options} />
-      ))}
+      <div className="flex flex-col gap-24">
+        {CoffeeCombination.map(({ title, options }, index) => (
+          <SelectorOption key={index} title={title} options={options} />
+        ))}
+      </div>
+      <OrderSummary />
+      <Button>Create my plan!</Button>
     </article>
   );
 }

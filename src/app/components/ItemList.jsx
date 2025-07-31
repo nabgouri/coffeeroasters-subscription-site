@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function ItemList({ item, index }) {
   const { title, description, image } = item;
   return (
-    <li className="text-center flex flex-col items-center">
+    <li className="text-center md:text-start flex flex-col items-center md:items-start not-last:border-t-2 border-paleOrange border-solid ">
       {image ? (
         <Image src={image} alt="" />
       ) : (

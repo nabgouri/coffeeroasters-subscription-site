@@ -1,7 +1,7 @@
-export default function Option({ option }) {
+export default function Option({ option, ...rest }) {
   const { title, description } = option;
   return (
-    <li className="bg-[#F4F1EB] p-6 rounded-lg">
+    <li className="bg-[#F4F1EB] p-6 rounded-lg " {...rest}>
       <h3 className="font-fraunces text-2xl leading-8 text-darkCryanBlue font-black mb-2">
         {title}
       </h3>

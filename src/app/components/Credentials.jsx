@@ -25,7 +25,7 @@ export default function Credentials() {
     },
   ];
   return (
-    <section className="mx-6 px-6 pt-16 bg-[#2C343E] text-center max-h-[60rem] ">
+    <section className="mx-6 px-6 pt-16 bg-[#2C343E] text-center max-h-[60rem] rounded-[10px] ">
       <h2 className="text-background text-[1.75rem] font-black leading-7 font-fraunces">
         Why choose us?
       </h2>

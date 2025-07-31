@@ -8,9 +8,9 @@ import footerLogo from "@/app/assets/svg/footer-logo.svg";
 
 export default function Footer() {
   return (
-    <footer className="mx-6 bg-[#2C343E] py-14 mt-[7.5rem] flex flex-col items-center justify-center gap-12 ">
+    <footer className="mx-6 bg-[#2C343E] py-14 mt-[7.5rem] md:mt-36  flex flex-col items-center justify-center gap-12 ">
       <Image src={footerLogo} alt="footer logo" />
-      <NavLinks className=" flex flex-col "></NavLinks>
+      <NavLinks className=" flex flex-col md:flex-row "></NavLinks>
       <ul className="flex items-center gap-6  mb-12">
         <Link href="/">
           <Image src={facebookImg} />

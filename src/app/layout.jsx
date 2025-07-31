@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import siteLogo from "@/app/assets/svg/site-logo.svg";
 import Footer from "./components/Footer";
+import OrderProvider from "./context/OrderProvider";
 
 const barlow = Barlow({
   subsets: ["latin"],
@@ -24,10 +25,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${barlow.variable} ${fraunces.variable} bg-background px-6 pt-8 pb-[4.5rem]`}
+        className={`${barlow.variable} ${fraunces.variable} bg-background px-6 pt-8 pb-[4.5rem] md:px-10 `}
       >
         <Header siteLogo={siteLogo} />
-        {children}
+        <OrderProvider>{children}</OrderProvider>
         <Footer />
       </body>
     </html>

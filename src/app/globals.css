@@ -13,6 +13,12 @@
   background-image: var(--bg-mobile);
 }
 
+@media (min-width: 768px) {
+  .hero {
+    background-image: var(--bg-tablet);
+  }
+}
+
 @media (min-width: 1220px) {
   .hero {
     background-image: var(--bg-desktop);

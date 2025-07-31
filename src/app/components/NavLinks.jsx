@@ -4,7 +4,7 @@ export default function NavLinks({ className }) {
   const links = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
-    { label: "Create your plan", href: "/payementPlan" },
+    { label: "Create your plan", href: "plan" },
   ];
   return (
     <nav className={`items-center gap-8 ${className}`}>

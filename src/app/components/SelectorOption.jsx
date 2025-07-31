@@ -1,28 +1,46 @@
+"use client";
+import React from "react";
 import Option from "./Option";
-
-export default function SelectorOption({ title, options }) {
+import { orderContext } from "../context/OrderProvider";
+export default function SelectorOption({ title, options, request }) {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const { setOrderOptions, orderOptions } = React.useContext(orderContext);
   return (
-    <section className="mb-24">
+    <section>
       <div className="flex items-center mb-[1.125rem] justify-between">
-        <h2 className="font-black font-fraunces text-6 leading-7 text-grey  ">
+        <h2 className="font-black font-fraunces text-2xl leading-7 text-grey ">
           {title}
         </h2>
-        <button>
+        <button onClick={() => setIsOpen(!isOpen)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width={8}
             height={8}
             viewBox="0 0 8 8"
+            className="w-5 h-3.5 stroke-darkCryan text-darkCryan"
           >
-            <path fill="currentColor" d="m2 5l2-2l2 2l1-1l-3-3l-3 3"></path>
+            <path
+              // fill="currentColor"
+              d="m2 5l2-2l2 2l1-1l-3-3l-3 3"
+              className=" text-darkCryan"
+            ></path>
           </svg>
         </button>
       </div>
-      <ul className="flex flex-col gap-4">
-        {options.map((option) => (
-          <Option option={option}></Option>
-        ))}
-      </ul>
+      {isOpen && (
+        <ul className="flex flex-col md:flex-row gap-4">
+          {options.map((option, index) => (
+            <Option
+              onClick={() => {
+                setOrderOptions({ ...orderOptions, orderOptions[request]: option.title });
+                console.log(orderOptions);
+              }}
+              key={index}
+              option={option}
+            ></Option>
+          ))}
+        </ul>
+      )}
     </section>
   );
 }

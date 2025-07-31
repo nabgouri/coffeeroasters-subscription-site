@@ -3,7 +3,8 @@ import Collections from "./components/Collections";
 import Credentials from "./components/Credentials";
 import Hero from "./components/Hero";
 import homeImage from "@/app/assets/images/home/hero-images/image-hero-coffeepress-mobile.jpg";
-import homeImageDesktop from "@/app/assets/images/home/hero-images/homeImage-desktop.png";
+import homeImageDesktop from "@/app/assets/images/home/hero-images/image-hero-coffeepress-desktop.jpg";
+import homeImageTablet from "@/app/assets/images/home/hero-images/image-hero-coffeepress-tablet.jpg";
 import ItemsList from "@/app/components/ItemsList";
 export default function Home() {
   const instructions = [
@@ -29,6 +30,7 @@ export default function Home() {
         title="Great coffee made simple."
         description="Start your mornings with the world’s best coffees. Try our expertly curated artisan coffees from our best roasters delivered directly to your door, at your schedule."
         background={homeImage}
+        backgroundTablet={homeImageTablet}
         backgroundDesktop={homeImageDesktop}
         className="bg-right-top"
       >
@@ -37,10 +39,13 @@ export default function Home() {
       <Collections />
       <Credentials />
       <ItemsList
+        className="mt-[43rem] "
         title="How it works"
         items={instructions}
         ulClassName="gap-14"
-      />
+      >
+        <Button className="mt-20 md:mt-11">Create Your Plan</Button>
+      </ItemsList>
     </article>
   );
 }
