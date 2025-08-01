@@ -2,7 +2,7 @@ import Hero from "../components/Hero";
 import aboutImage from "@/app/assets/images/about/hero-images/image-hero-whitecup-mobile.jpg";
 import aboutImageTablet from "@/app/assets/images/about/hero-images/image-hero-whitecup-tablet.jpg";
 
-import aboutImageDesktop from "@/app/assets/images/about/hero-images/aboutImage-desktop.png";
+import aboutImageDesktop from "@/app/assets/images/about/hero-images/image-hero-whitecup-desktop.jpg";
 import CommitmentSection from "../components/CommitmentSection";
 import QualitySection from "../components/Quality";
 import ItemsList from "../components/ItemsList";
@@ -36,7 +36,6 @@ export default function AboutPage() {
         backgroundTablet={aboutImageTablet}
         backgroundDesktop={aboutImageDesktop}
         title="About Us"
-        className="bg-black/40 bg-left bg-blend-overlay"
         description="Coffeeroasters began its journey of exotic discovery in 1999, highlighting stories of coffee from around the world. We have since been dedicated to bring the perfect cup - from bean to brew - in every shipment"
       />
       <CommitmentSection />

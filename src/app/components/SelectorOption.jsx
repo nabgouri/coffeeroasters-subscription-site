@@ -8,7 +8,10 @@ export default function SelectorOption({ title, options, request }) {
   return (
     <section>
       <div className="flex items-center mb-[1.125rem] justify-between">
-        <h2 className="font-black font-fraunces text-2xl leading-7 text-grey ">
+        <h2
+          className="font-black font-fraunces text-2xl leading-7 text-grey "
+          onClick={() => setIsOpen(!isOpen)}
+        >
           {title}
         </h2>
         <button onClick={() => setIsOpen(!isOpen)}>
@@ -28,14 +31,19 @@ export default function SelectorOption({ title, options, request }) {
         </button>
       </div>
       {isOpen && (
-        <ul className="flex flex-col md:flex-row gap-4">
+        <ul className="flex flex-col md:flex-row gap-4 ">
           {options.map((option, index) => (
             <Option
               onClick={() => {
-                setOrderOptions({ ...orderOptions, [request]: option.title });
+                setOrderOptions({
+                  ...orderOptions,
+                  [request]: option.title,
+                });
+                console.log(orderOptions);
               }}
               key={index}
               option={option}
+              request={request}
             ></Option>
           ))}
         </ul>

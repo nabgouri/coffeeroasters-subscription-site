@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${barlow.variable} ${fraunces.variable} bg-background px-6 pt-8 pb-[4.5rem] md:px-10 `}
+        className={`${barlow.variable} ${fraunces.variable} bg-background px-6 pt-8 pb-[4.5rem] md:px-10 xl:px-20 `}
       >
         <Header siteLogo={siteLogo} />
         <OrderProvider>{children}</OrderProvider>

@@ -3,7 +3,7 @@ import { orderContext } from "../context/OrderProvider";
 import React from "react";
 export default function OrderSummary() {
   const { orderOptions } = React.useContext(orderContext);
-  const { coffeFlavor, coffeType, coffeeAmount, coffeeGrind, coffeeTime } =
+  const { preferences, beanType, quantity, grindOption, deliveries } =
     orderOptions;
   return (
     <div className="text-white py-8 px-6 rounded-lg bg-[#2c343e] mt-[7.5rem] mb-14">
@@ -11,11 +11,11 @@ export default function OrderSummary() {
         ORDER SUMMARY
       </h4>
       <p className="font-fraunces font-black text-2xl leading-10 ">
-        "I drink my cooffee as <DynamicText>{coffeFlavor}</DynamicText>, with a{" "}
-        <DynamicText> {coffeType}</DynamicText> type of bean.{" "}
-        <DynamicText> {coffeeAmount}</DynamicText> ground ala{" "}
-        <DynamicText> {coffeeGrind}</DynamicText>, Sent to me{" "}
-        <DynamicText> {coffeeTime} </DynamicText>."
+        "I drink my cooffee as <DynamicText>{preferences}</DynamicText>, with a{" "}
+        <DynamicText> {beanType}</DynamicText> type of bean.{" "}
+        <DynamicText> {quantity}</DynamicText> ground ala{" "}
+        <DynamicText> {grindOption}</DynamicText>, Sent to me{" "}
+        <DynamicText> {deliveries} </DynamicText>."
       </p>
     </div>
   );

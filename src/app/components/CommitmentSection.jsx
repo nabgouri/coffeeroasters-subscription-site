@@ -2,13 +2,13 @@ import Image from "next/image";
 import commitmentImage from "@/app/assets/images/about/image-commitment.jpg";
 export default function CommitmentSection() {
   return (
-    <section className=" mb-[12.375rem] md:flex items-center gap-[4.375rem]">
+    <section className=" mb-[12.375rem] md:flex items-center gap-[4.375rem] xl:gap-32 justify-center xl:px-[5.5rem]">
       <Image src={commitmentImage} />
       <div>
-        <h2 className="font-fraunces text-[2rem] leading-12 mt-12 md:mt-0 text-center font-black text-darkCryanBlue">
+        <h2 className="font-fraunces text-[2rem] leading-12 mt-12 md:mt-0 text-center xl:text-start font-black text-darkCryanBlue">
           Our commitment
         </h2>
-        <p className="font-barlow text-darkCryanBlue leading-6 mt-8 text-center">
+        <p className="font-barlow text-darkCryanBlue leading-6 mt-8 text-center md:text-start">
           We’re built on a simple mission and a commitment to doing good along
           the way. We want to make it easy for you to discover and brew the
           world’s best coffee at home. It all starts at the source. To locate

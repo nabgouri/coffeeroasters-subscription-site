@@ -4,11 +4,11 @@ import React from "react";
 export const orderContext = React.createContext();
 export default function OrderProvider({ children }) {
   const [orderOptions, setOrderOptions] = React.useState({
-    coffeFlavor: "",
-    coffeType: "",
-    coffeeAmount: "",
-    coffeeGrind: "",
-    coffeeTime: "",
+    preferences: "",
+    beanType: "",
+    quantity: "",
+    grindOption: "",
+    deliveries: "",
   });
   return (
     <orderContext.Provider value={{ orderOptions, setOrderOptions }}>

@@ -1,12 +1,14 @@
 import Hero from "../components/Hero";
 import subscribeImage from "@/app/assets/images/subscribe/image-hero-blackcup-mobile.jpg";
-import subscribeDesktop from "@/app/assets/images/subscribe/image-hero-blackcup-mobile.jpg";
+import subscribeDesktop from "@/app/assets/images/subscribe/image-hero-blackcup-desktop.jpg";
 import subscribeTablet from "@/app/assets/images/subscribe/image-hero-blackcup-tablet.jpg";
 
 import ItemsList from "../components/ItemsList";
 import SelectorOption from "../components/SelectorOption";
 import OrderSummary from "../components/OrderSummary";
 import Button from "../components/Button";
+import OrderFlow from "../components/OrderFlow";
+
 const orderFlow = [
   {
     title: "Pick your coffee",
@@ -44,7 +46,7 @@ const CoffeeCombination = [
           "Dense and finely ground beans for an intense, flavorful experience",
       },
     ],
-    request: "coffeFlavor",
+    request: "preferences",
   },
   {
     title: "What type of coffee?",
@@ -65,7 +67,7 @@ const CoffeeCombination = [
           "Combination of two or three dark roasted beans of organic coffees",
       },
     ],
-    request: "coffeType",
+    request: "beanType",
   },
   {
     title: "How much would you like?",
@@ -86,7 +88,7 @@ const CoffeeCombination = [
           "Perfect for offices and events. Yields about 90 delightful cups.",
       },
     ],
-    request: "coffeeAmount",
+    request: "quantity",
   },
   {
     title: "Want us to grind them?",
@@ -106,7 +108,7 @@ const CoffeeCombination = [
           "Course ground beans specially suited for french press coffee",
       },
     ],
-    request: "coffeeGrind",
+    request: "grindOption",
   },
   {
     title: "How often should we deliver?",
@@ -124,7 +126,7 @@ const CoffeeCombination = [
         description: "$12.00 per shipment. Includes free priority shipping.",
       },
     ],
-    request: "coffeeTime",
+    request: "deliveries",
   },
 ];
 export default function SubscribePage() {
@@ -138,19 +140,25 @@ export default function SubscribePage() {
         description="Build a subscription plan that best fits your needs. We offer an assortment of the best 
   artisan coffees from around the globe delivered fresh to your door."
       />
-      <ItemsList isPrimaryTheme={false} items={orderFlow} />
-      <div className="flex flex-col gap-24">
-        {CoffeeCombination.map(({ title, options, request }, index) => (
-          <SelectorOption
-            key={index}
-            title={title}
-            options={options}
-            request={request}
-          />
-        ))}
+      <ItemsList isPrimaryTheme={false} items={orderFlow} ListType="ol" />
+
+      <div className="flex gap-[7.75rem]">
+        <OrderFlow />
+        <div>
+          <div className="flex flex-col gap-24 w-full justify-between">
+            {CoffeeCombination.map(({ title, options, request }, index) => (
+              <SelectorOption
+                key={index}
+                title={title}
+                options={options}
+                request={request}
+              />
+            ))}
+          </div>
+          <OrderSummary />
+          <Button className="flex jusify-end">Create my plan!</Button>
+        </div>
       </div>
-      <OrderSummary />
-      <Button>Create my plan!</Button>
     </article>
   );
 }

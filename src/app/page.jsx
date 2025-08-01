@@ -6,6 +6,7 @@ import homeImage from "@/app/assets/images/home/hero-images/image-hero-coffeepre
 import homeImageDesktop from "@/app/assets/images/home/hero-images/image-hero-coffeepress-desktop.jpg";
 import homeImageTablet from "@/app/assets/images/home/hero-images/image-hero-coffeepress-tablet.jpg";
 import ItemsList from "@/app/components/ItemsList";
+import Link from "next/link";
 export default function Home() {
   const instructions = [
     {
@@ -34,17 +35,22 @@ export default function Home() {
         backgroundDesktop={homeImageDesktop}
         className="bg-right-top"
       >
-        <Button>Create your plan</Button>
+        <Button>
+          <Link href="/plan">Create Your Plan</Link>
+        </Button>
       </Hero>
       <Collections />
       <Credentials />
       <ItemsList
-        className="mt-[43rem] "
+        className="mt-[43rem] md:mt-[35rem] xl:mt-[20rem]"
         title="How it works"
         items={instructions}
         ulClassName="gap-14"
+        ListType="ol"
       >
-        <Button className="mt-20 md:mt-11">Create Your Plan</Button>
+        <Button className="mt-20 md:mt-11">
+          <Link href="/plan">Create Your Plan</Link>
+        </Button>
       </ItemsList>
     </article>
   );
