@@ -8,6 +8,7 @@ import SelectorOption from "../components/SelectorOption";
 import OrderSummary from "../components/OrderSummary";
 import Button from "../components/Button";
 import OrderFlow from "../components/OrderFlow";
+import SummaryModal from "../components/SummaryModal";
 
 const orderFlow = [
   {
@@ -144,7 +145,7 @@ export default function SubscribePage() {
 
       <div className="flex gap-[7.75rem]">
         <OrderFlow />
-        <div>
+        <div className="flex flex-col ">
           <div className="flex flex-col gap-24 w-full justify-between">
             {CoffeeCombination.map(({ title, options, request }, index) => (
               <SelectorOption
@@ -155,8 +156,13 @@ export default function SubscribePage() {
               />
             ))}
           </div>
-          <OrderSummary />
-          <Button className="flex jusify-end">Create my plan!</Button>
+          <OrderSummary
+            className=" py-8 px-6 bg-[#2c343e]"
+            titleStyle="font-barlow leading-6 opacity-50 text-base mb-2"
+            title="ORDER SUMMARY"
+          />
+          <Button className=" self-center xl:self-end">Create my plan!</Button>
+          <SummaryModal />
         </div>
       </div>
     </article>
