@@ -1,3 +1,4 @@
+"use client";
 import Hero from "../components/Hero";
 import subscribeImage from "@/app/assets/images/subscribe/image-hero-blackcup-mobile.jpg";
 import subscribeDesktop from "@/app/assets/images/subscribe/image-hero-blackcup-desktop.jpg";
@@ -9,6 +10,8 @@ import OrderSummary from "../components/OrderSummary";
 import Button from "../components/Button";
 import OrderFlow from "../components/OrderFlow";
 import SummaryModal from "../components/SummaryModal";
+import React from "react";
+import { orderContext } from "../context/OrderProvider";
 
 const orderFlow = [
   {
@@ -131,6 +134,19 @@ const CoffeeCombination = [
   },
 ];
 export default function SubscribePage() {
+  const modalRef = React.useRef();
+  const [isSelecterOpen, setIsSelectorOpen] = React.useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+  const { orderOptions } = React.useContext(orderContext);
+  let isOrderCompleted = Object.values(orderOptions).every(
+    (value) => value !== ""
+  );
+
   return (
     <article className="flex flex-col items-center">
       <Hero
@@ -144,7 +160,10 @@ export default function SubscribePage() {
       <ItemsList isPrimaryTheme={false} items={orderFlow} ListType="ol" />
 
       <div className="flex gap-[7.75rem]">
-        <OrderFlow />
+        <OrderFlow
+          isSelectorOpen={isSelecterOpen}
+          setIsSelectorOpen={setIsSelectorOpen}
+        />
         <div className="flex flex-col ">
           <div className="flex flex-col gap-24 w-full justify-between">
             {CoffeeCombination.map(({ title, options, request }, index) => (
@@ -153,16 +172,25 @@ export default function SubscribePage() {
                 title={title}
                 options={options}
                 request={request}
+                isSelectorOpen={isSelecterOpen}
+                setIsSelectorOpen={setIsSelectorOpen}
+                index={index}
               />
             ))}
           </div>
           <OrderSummary
-            className=" py-8 px-6 bg-[#2c343e]"
+            className=" py-8 px-6 bg-[#2c343e] mt-[7.5rem] mb-14"
             titleStyle="font-barlow leading-6 opacity-50 text-base mb-2"
             title="ORDER SUMMARY"
           />
-          <Button className=" self-center xl:self-end">Create my plan!</Button>
-          <SummaryModal />
+          <Button
+            disabled={!isOrderCompleted}
+            onClick={() => modalRef.current.showModal()}
+            className=" self-center xl:self-end disabled:bg-[#E2DEDB] disabled:cursor-pointe"
+          >
+            Create my plan!
+          </Button>
+          <SummaryModal ref={modalRef} />
         </div>
       </div>
     </article>
