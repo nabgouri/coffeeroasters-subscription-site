@@ -1,7 +1,12 @@
+import { useRouter } from "next/navigation";
 import Button from "./Button";
 import OrderSummary from "./OrderSummary";
 
 export default function SummaryModal({ ref }) {
+  const router = useRouter();
+  function checkoutOrder() {
+    router.push("/");
+  }
   return (
     <dialog
       ref={ref}
@@ -22,7 +27,7 @@ export default function SummaryModal({ ref }) {
           <span className="text-darkCryanBlue font-fraunces font-black text-[2rem]">
             $14.00 / mo
           </span>
-          <Button>Checkout</Button>
+          <Button onClick={() => checkoutOrder()}>Checkout</Button>
         </div>
       </OrderSummary>
     </dialog>

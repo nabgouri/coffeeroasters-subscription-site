@@ -24,3 +24,8 @@
     background-image: var(--bg-desktop);
   }
 }
+
+.backdrop::backdrop {
+  background-color: black;
+  opacity: 50%;
+}
