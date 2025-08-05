@@ -43,7 +43,7 @@ export default function AboutPage() {
       <ItemsList
         title="Our headquarters"
         items={providers}
-        ulClassName="gap-20"
+        ulClassName="gap-20 md:justfiy-between"
       />
     </article>
   );

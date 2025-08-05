@@ -1,12 +1,34 @@
+"use client";
 import { useRouter } from "next/navigation";
 import Button from "./Button";
 import OrderSummary from "./OrderSummary";
+import React from "react";
 
 export default function SummaryModal({ ref }) {
   const router = useRouter();
   function checkoutOrder() {
     router.push("/");
   }
+
+  React.useEffect(() => {
+    const modalRef = ref.current;
+
+    function handleClickOutside(event) {
+      if (event.target === modalRef) {
+        modalRef.close();
+      }
+    }
+
+    if (modalRef) {
+      modalRef.addEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      if (modalRef) {
+        modalRef.removeEventListener("click", handleClickOutside);
+      }
+    };
+  }, [ref]);
   return (
     <dialog
       ref={ref}
